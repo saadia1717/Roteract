@@ -1,9 +1,18 @@
-
-<p-card [header]="event.name" [subheader]="event.description" >   
+<p-card [header]="event.name" [subheader]="event.description">
+    @if(showDetails){
+    <span>Location : {{event.location}}</span>
+    }
     <ng-template pTemplate="footer">
         <div class="flex gap-3 align-items-center">
-            <span > {{ event.date| date}}</span>
-            <p-button label="View details" class="ml-auto"  />
+            <span> {{ event.date| date}}</span>
+            @if(!showDetails){
+            <a routerLink="/event/{{event.id}}" class="p-button font-bold ml-auto">
+                View details
+            </a>
+            }
+            @else {
+            <p-button label="Book a place" class="ml-auto" />
+            }
         </div>
     </ng-template>
 </p-card>

@@ -15,14 +15,20 @@ export class LayoutComponent {
   items: MenuItem[] | undefined;
 
   ngOnInit() {
-      this.items = [
-          {
-              label: 'Home',
-          },
-          {
-              label: 'Events',
-          },
-          
-      ]
+    this.items = [
+      {
+        label: 'Events',
+        route: '/'
+      },
+      {
+        label: 'Blog',
+        route: "blog"
+      },
+      {
+        label: 'Contact',
+        route: "contact"
+      },
+
+    ]
   }
 }
