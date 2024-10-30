@@ -1,0 +1,9 @@
+
+<p-card [header]="event.name" [subheader]="event.description" >   
+    <ng-template pTemplate="footer">
+        <div class="flex gap-3 align-items-center">
+            <span > {{ event.date| date}}</span>
+            <p-button label="View details" class="ml-auto"  />
+        </div>
+    </ng-template>
+</p-card>
